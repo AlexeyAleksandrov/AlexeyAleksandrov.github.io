@@ -69,21 +69,33 @@
         </div>
     </div>
 </div>
+</body>
 <script>
     let tg = window.Telegram.WebApp; //получаем объект webapp телеграма
     tg.expand(); //расширяем на все окно
 
     let btn = document.getElementById("btn1"); //получаем кнопку подписаться
 
-    btn.addEventListener('click', function () { //вешаем событие на нажатие html-кнопки
-        alert("click!");
-        let data = {
-            subscribe: true,
-            name: 'Рассылка 1'
-        }
+    tg.MainButton.text = "Changed Text"; //изменяем текст кнопки
+    tg.MainButton.setText("Changed Text1"); //изменяем текст кнопки иначе
+    tg.MainButton.textColor = "#F55353"; //изменяем цвет текста кнопки
+    tg.MainButton.color = "#143F6B"; //изменяем цвет бэкграунда кнопки
+
+    tg.MainButton.show() //показываем
+
+    Telegram.WebApp.onEvent('mainButtonClicked', function () {
         tg.sendData("some string that we need to send");
-        tg.close();
+        //при клике на основную кнопку отправляем данные в строковом виде
     });
+
+    // btn.addEventListener('click', function () { //вешаем событие на нажатие html-кнопки
+    //     alert("click!");
+    //     let data = {
+    //         subscribe: true,
+    //         name: 'Рассылка 1'
+    //     }
+    //     tg.sendDate(JSON.stringify(data));
+    //     tg.close();
+    // });
 </script>
-</body>
 </html>
