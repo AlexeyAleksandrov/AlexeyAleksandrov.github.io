@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo_IPTIP_MIREA_test_bot</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script> <!--Подключаем скрипт от телеграм-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="subscription-buttons">
+    <div class="row">
+        <div class="col">
+            <div class="subscription">
+                <h3>Рассылка 1</h3>
+                <button id="btn1">Подписаться</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="unsubscription">
+                <h3>Рассылка 2</h3>
+                <button id="btn2">Отписаться</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="subscription">
+                <h3>Рассылка 3</h3>
+                <button>Подписаться</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="subscription">
+                <h3>Рассылка 4</h3>
+                <button>Подписаться</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="subscription">
+                <h3>Рассылка 5</h3>
+                <button>Подписаться</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="unsubscription">
+                <h3>Рассылка 6</h3>
+                <button>Отписаться</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="unsubscription">
+                <h3>Рассылка 7</h3>
+                <button>Отписаться</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="subscription">
+                <h3>Рассылка 8</h3>
+                <button>Подписаться</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="subscription">
+                <h3>Рассылка 9</h3>
+                <button>Подписаться</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    let tg = window.Telegram.WebApp; //получаем объект webapp телеграма
+    tg.expand(); //расширяем на все окно
+
+    let btn = document.getElementById("btn1"); //получаем кнопку подписаться
+
+    btn.addEventListener('click', function () { //вешаем событие на нажатие html-кнопки
+        let data = {
+            subscribe: true,
+            name: 'Рассылка 1'
+        }
+        tg.sendDate(JSON.stringify(data));
+        tg.close();
+    });
+</script>
+</body>
+</html>

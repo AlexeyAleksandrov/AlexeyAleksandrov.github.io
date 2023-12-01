@@ -1,0 +1,61 @@
+.subscription-buttons {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+
+.col {
+  flex: 1;
+  margin: 0 10px;
+}
+
+.subscription {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+.subscription h3 {
+  margin: 0;
+}
+
+.subscription button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.subscription button:hover {
+  background-color: #3e8e41;
+}
+
+.unsubscription {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+.unsubscription h3 {
+  margin: 0;
+}
+
+.unsubscription button {
+  background-color: #de0c1b;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.unsubscription button:hover {
+  background-color: #c40815;
+}
