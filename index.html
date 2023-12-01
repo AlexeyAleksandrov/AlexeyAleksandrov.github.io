@@ -78,24 +78,29 @@
 
     tg.MainButton.text = "Changed Text"; //изменяем текст кнопки
     tg.MainButton.setText("Changed Text1"); //изменяем текст кнопки иначе
-    tg.MainButton.textColor = "#F55353"; //изменяем цвет текста кнопки
-    tg.MainButton.color = "#143F6B"; //изменяем цвет бэкграунда кнопки
+    tg.MainButton.textColor = "#ffffff"; //изменяем цвет текста кнопки
+    tg.MainButton.color = "#4CAF50"; //изменяем цвет бэкграунда кнопки
 
     tg.MainButton.show() //показываем
 
     Telegram.WebApp.onEvent('mainButtonClicked', function () {
-        tg.sendData("some string that we need to send");
+        let data = {
+            subscribe: true,
+            name: 'Рассылка 1'
+        }
+        tg.sendDate(JSON.stringify(data));
+        // tg.sendData("some string that we need to send");
         //при клике на основную кнопку отправляем данные в строковом виде
     });
 
-    // btn.addEventListener('click', function () { //вешаем событие на нажатие html-кнопки
-    //     alert("click!");
-    //     let data = {
-    //         subscribe: true,
-    //         name: 'Рассылка 1'
-    //     }
-    //     tg.sendDate(JSON.stringify(data));
-    //     tg.close();
-    // });
+    btn.addEventListener('click', function () { //вешаем событие на нажатие html-кнопки
+        alert("click!");
+        let data = {
+            subscribe: true,
+            name: 'Рассылка 1'
+        }
+        tg.sendDate(JSON.stringify(data));
+        tg.close();
+    });
 </script>
 </html>
