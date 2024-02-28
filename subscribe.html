@@ -84,16 +84,16 @@
     tg.MainButton.show() //показываем
 
     Telegram.WebApp.onEvent('mainButtonClicked', function () {
-        let data = {
-            subscribe: true,
-            name: 'Интерес 1'
-        }
+        // let data = {
+        //     subscribe: true,
+        //     name: 'Интерес 1'
+        // }
         tg.sendData("Вы подписались на:\n" +
             "- Цифровые кафедры\n" +
             "- Учебные субботы\n\n" +
             "Вы отписались:\n" +
             "- Группы элитной подготовки");
-        tg.sendDate(JSON.stringify(data));
+        // tg.sendDate(JSON.stringify(data));
         tg.close();
         //при клике на основную кнопку отправляем данные в строковом виде
     });
