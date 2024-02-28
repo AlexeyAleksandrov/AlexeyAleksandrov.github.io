@@ -96,13 +96,26 @@
 
     btn.addEventListener('click', function () { //вешаем событие на нажатие html-кнопки
 
-        let data = {
-            subscribe: true,
-            name: 'Рассылка 1'
+        if(btn.textContent === "Подписаться")
+        {
+            btn.style.backgroundColor = "#de0c1b";
+            btn.textContent = "Отписаться";
         }
-        alert(JSON.stringify(data));
-        tg.sendDate(JSON.stringify(data));
-        tg.close();
+        else
+        {
+            btn.style.backgroundColor = "#4CAF50";
+            btn.textContent = "Подписаться";
+        }
+
+        // btn.style.color = "#ffffff";
+        //
+        // let data = {
+        //     subscribe: true,
+        //     name: 'Рассылка 1'
+        // }
+        // alert(JSON.stringify(data));
+        // tg.sendDate(JSON.stringify(data));
+        // tg.close();
     });
 </script>
 </html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo_IPTIP_MIREA_test_bot</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script> <!--Подключаем скрипт от телеграм-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="subscription-buttons">
+    <div class="row">
+        <div class="col">
+            <div class="subscription">
+                <h3>Цифровые кафедры</h3>
+                <button id="btn1">Подписаться</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="unsubscription">
+                <h3>Группы элитной подготовки</h3>
+                <button id="btn2">Отписаться</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="subscription">
+                <h3>Учебные субботы</h3>
+                <button id="btn3">Подписаться</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="subscription">
+                <h3>Доп. занятия по предметам для отстающих</h3>
+                <button>Подписаться</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="subscription">
+                <h3>Кружки от студентов</h3>
+                <button>Подписаться</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="unsubscription">
+                <h3>Хакатоны</h3>
+                <button>Отписаться</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="unsubscription">
+                <h3>Практики</h3>
+                <button>Отписаться</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="subscription">
+                <h3>Стажировки и внешние программы практик</h3>
+                <button>Подписаться</button>
+            </div>
+        </div>
+        <div class="col">
+            <div class="subscription">
+                <h3>Доп. программы Университета</h3>
+                <button>Подписаться</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    let tg = window.Telegram.WebApp; //получаем объект webapp телеграма
+    tg.expand(); //расширяем на все окно
+
+    let btn = document.getElementById("btn1"); //получаем кнопку подписаться
+
+    tg.MainButton.text = "Changed Text"; //изменяем текст кнопки
+    tg.MainButton.setText("Сохранить настройки"); //изменяем текст кнопки иначе
+    tg.MainButton.textColor = "#ffffff"; //изменяем цвет текста кнопки
+    tg.MainButton.color = "#4CAF50"; //изменяем цвет бэкграунда кнопки
+
+    tg.MainButton.show() //показываем
+
+    Telegram.WebApp.onEvent('mainButtonClicked', function () {
+        let data = {
+            subscribe: true,
+            name: 'Интерес 1'
+        }
+        tg.sendData("Вы подписались на Рассылку 1");
+        tg.sendDate(JSON.stringify(data));
+        tg.close();
+        //при клике на основную кнопку отправляем данные в строковом виде
+    });
+
+    let btn1 = document.getElementById("btn1"); //получаем кнопку подписаться
+    btn1.addEventListener('click', function () { //вешаем событие на нажатие html-кнопки
+        if(btn1.textContent === "Подписаться")
+        {
+            btn1.style.backgroundColor = "#de0c1b";
+            btn1.textContent = "Отписаться";
+        }
+        else
+        {
+            btn1.style.backgroundColor = "#4CAF50";
+            btn1.textContent = "Подписаться";
+        }
+    });
+    
+    let btn2 = document.getElementById("btn2"); //получаем кнопку подписаться
+    btn2.addEventListener('click', function () { //вешаем событие на нажатие html-кнопки
+        if(btn2.textContent === "Подписаться")
+        {
+            btn2.style.backgroundColor = "#de0c1b";
+            btn2.textContent = "Отписаться";
+        }
+        else
+        {
+            btn2.style.backgroundColor = "#4CAF50";
+            btn2.textContent = "Подписаться";
+        }
+    });
+    
+    let btn3 = document.getElementById("btn3"); //получаем кнопку подписаться
+    btn3.addEventListener('click', function () { //вешаем событие на нажатие html-кнопки
+        if(btn3.textContent === "Подписаться")
+        {
+            btn3.style.backgroundColor = "#de0c1b";
+            btn3.textContent = "Отписаться";
+        }
+        else
+        {
+            btn3.style.backgroundColor = "#4CAF50";
+            btn3.textContent = "Подписаться";
+        }
+    });
+</script>
+</html>
